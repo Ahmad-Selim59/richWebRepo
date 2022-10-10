@@ -63,8 +63,8 @@ for (let i = 0; i < p.length; i++){
 
 }
 
-// when body is clicked, cat noises from list are played
-let catNoises = ['https://bigsoundbank.com/UPLOAD/mp3/0494.mp3','https://bigsoundbank.com/UPLOAD/mp3/1896.mp3','https://bigsoundbank.com/UPLOAD/mp3/1479.mp3']
+//when you click on the page cat noises are played
+let catNoises = ['https://bigsoundbank.com/UPLOAD/mp3/1896.mp3','https://bigsoundbank.com/UPLOAD/mp3/1895.mp3','https://bigsoundbank.com/UPLOAD/mp3/1892.mp3']
 
 onclick = () => {
     const randomMeow = Math.floor(Math.random() * catNoises.length)
