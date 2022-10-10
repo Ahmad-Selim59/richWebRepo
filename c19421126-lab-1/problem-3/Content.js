@@ -47,7 +47,6 @@ for (let i = 0; i < headers.length; i++){
     headers[i].innerText = "Cats are awesome.";
 
     //randomise the text's colours
-    let randomColour = Math.floor(Math.random() * randomColours.length)
     headers[i].style.color = randomColours[randomColour];
 }
 //do the same for p elements
@@ -62,8 +61,16 @@ for (let i = 0; i < p.length; i++){
     let randomRotation = Math.floor(Math.random() * randomRotations.length)
     p[i].style.writingMode = randomRotations[randomRotation];
 
-    //randomise the background colour
-    //document.body.style.background = randomColours[randomColour];
 }
+
+// when body is clicked, cat noises from list are played
+let catNoises = ['https://bigsoundbank.com/UPLOAD/mp3/0494.mp3','https://bigsoundbank.com/UPLOAD/mp3/1896.mp3','https://bigsoundbank.com/UPLOAD/mp3/1479.mp3']
+
+onclick = () => {
+    const randomMeow = Math.floor(Math.random() * catNoises.length)
+    let audio = new Audio(catNoises[randomMeow]);
+    audio.play();
+}
+
 //randomise the background colour
 document.body.style.background = randomColours[randomColour];
