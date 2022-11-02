@@ -1,0 +1,41 @@
+table .Shown:nth-of-type(odd){
+    background-color: #f2f2f2;
+}
+
+.header{
+    font-size: 25px;
+}
+
+.error{
+    width: 40%;
+    background-color: black;
+    color: red;
+}
+
+.inputs{
+    border-style: solid;
+    border-radius: 12px;
+    border-color: rgb(2, 79, 79);
+    background-color: cornflowerblue;
+    width: 70%;
+}
+
+.AddContact{
+    border-color: #f2f2f2;
+    border-style: solid;
+}
+
+.header, .inputs, .filter{
+    text-align: center;
+    padding: 1em;
+}
+
+.Ctable{
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+
+table,td,th{
+    border-style: solid;
+}

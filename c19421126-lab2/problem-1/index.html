@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>lab3 q1</title>
+    <link rel="stylesheet" href="stylesheet.css">
+    <script src="javascript.JS"></script>
+</head>
+<body>
+    <div class="header">
+        <p>Phone Directory</p>
+    </div>
+
+   <center>
+    <div id = "validations" class="inputs">
+        <center>
+            <div id="error" class="error"></div>
+        </center>
+        <input type="text" id="contactName" placeholder="Contact Name">
+        <input type="text" id="mobileNumber" placeholder="Mobile Number">
+        <input type="text" id="email" placeholder="Email">
+        <input type="button" class="AddContact" id="AddContact" value="Add Contact" onclick="AddContact()">
+    </div>
+    </center>
+
+    <br>
+    <div class="filter">
+        <a>Search contact by Mobile No:</a>
+        <input type="search" placeholder="search number" id="filter" onkeyup="Search()">
+        <center>
+        <br><div id="noResult" class="error"></div>
+        </center>
+    </div>
+    <div class="header">Contacts summary</div>
+      <table id="logs" class="Ctable">
+        <tr>
+            <th onclick="sortNames()">Name</th>
+            <th>Phone</th>
+            <th>Email</th>
+        </tr>
+    </table>
+
+</body>
+</html>
