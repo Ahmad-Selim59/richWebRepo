@@ -46,7 +46,13 @@ function addNote() {
             let colorButton = document.createElement("button");
             colorButton.innerHTML = colors[i];
             colorButton.className = colorButton.innerHTML;
-            colorButton.onclick = function(){changeColour(div,colorButton.innerHTML)};
+            rxjs.fromEvent(colorButton, 'click')
+                .subscribe(() => changeColourFunction()
+            );
+            function changeColourFunction(){
+                changeColour(div,colorButton.innerHTML)
+            }
+            //colorButton.onclick = function(){changeColour(div,colorButton.innerHTML)};
             div.appendChild(colorButton);
         }
 
