@@ -18,6 +18,7 @@ function addNote() {
 
         let editButton = document.createElement("button")
         editButton.innerHTML = "Edit";
+        
         editButton.onclick = function(){editNote(noteText)};
         editButton.className = "NoteButton";
         div.appendChild(editButton);
