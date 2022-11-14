@@ -31,7 +31,13 @@ function addNote() {
 
         let deleteButton = document.createElement("button")
         deleteButton.innerHTML = "Delete";
-        deleteButton.onclick = function(){deleteNote(div)}
+        rxjs.fromEvent(deleteButton, 'click')
+            .subscribe(() => deletingFunction()
+        );
+        function deletingFunction(){
+            deleteNote(div)
+        }
+        //deleteButton.onclick = function(){deleteNote(div)}
         deleteButton.className = "NoteButton";
         div.appendChild(deleteButton);
 
