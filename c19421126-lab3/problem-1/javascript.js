@@ -19,7 +19,13 @@ function addNote() {
         let editButton = document.createElement("button")
         editButton.innerHTML = "Edit";
         
-        editButton.onclick = function(){editNote(noteText)};
+        rxjs.fromEvent(editButton, 'click')
+            .subscribe(() => editingFunction()
+        );
+        function editingFunction(){
+            editNote(noteText)
+        }
+        //editButton.onclick = function(){editNote(noteText)};
         editButton.className = "NoteButton";
         div.appendChild(editButton);
 
