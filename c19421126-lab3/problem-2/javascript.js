@@ -33,9 +33,14 @@ function timer(){
 
     let currentTime = currentDate.getTime();
     let timerGoalParsed = timerGoal.getTime();
-    console.log(currentTime);
-    console.log(timerGoalParsed);
+    //console.log(currentTime);
+    //console.log(timerGoalParsed);
     let remaining = timerGoalParsed - currentTime;
-    console.log(remaining);
+    //console.log(remaining);
+
+    let hoursRemaining = Math.floor((remaining % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    let minutesRemaining = Math.floor((remaining % (1000 * 60 * 60)) / (1000 * 60));
+    let secondsRemaining = Math.floor((remaining % (1000 * 60)) / 1000);
+    console.log("hours remaining", hoursRemaining, "minutes remaining", minutesRemaining, "seconds remaining", secondsRemaining);
 
 }
