@@ -51,6 +51,7 @@ function addNote() {
             let childDiv = document.createElement("p");
             console.log("adding child test");
             childDiv.innerHTML="test";
+            childDiv.contentEditable = true;
             div.appendChild(childDiv);
             //document.getElementById("note").appendChild("childDiv");
             
