@@ -16,4 +16,8 @@ function timer(){
     let minutes = document.getElementById("minutes").value;
     let seconds = document.getElementById("seconds").value;
 
+    totalTime = (hours * 60 * 60) + (minutes * 60) + seconds;
+    console.log(totalTime)
+
+
 }
