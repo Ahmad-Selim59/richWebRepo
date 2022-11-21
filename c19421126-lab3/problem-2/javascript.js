@@ -17,5 +17,18 @@ function timer(){
 
     //find out how many seconds it is in total
     totalTime = (hours * 60 * 60) + (minutes * 60) + seconds;
-    console.log(totalTime)
+    //console.log(totalTime)
+
+    let currentTime = new Date();
+    //console.log(currentTime);
+    let hourGoal = Number(currentTime.getHours()) + Number(hours);
+    let minuteGoal = Number(currentTime.getMinutes()) + Number(minutes);
+    let secondGoal = Number(currentTime.getSeconds()) + Number(seconds);
+    /*console.log(hourGoal);
+    console.log(minuteGoal);
+    console.log(secondGoal);*/
+    //this is the time which the timer will stop at
+    let timerGoal = new Date(currentTime.getFullYear(), currentTime.getMonth(), currentTime.getDate(), hourGoal, minuteGoal, secondGoal);
+    console.log(timerGoal);
+
 }
