@@ -1,9 +1,10 @@
 let colors = ["Aqua", "Green", "Red", "Purple"];
 let addButton = document.getElementById("AddNote");
+/*
 rxjs.fromEvent(addButton, 'click')
     .subscribe(() => addNote()
 );
-
+*/
 
 /*
 const addButton = document.getElementById("AddNote");
@@ -38,19 +39,21 @@ function addNote() {
         //editButton.onclick = function(){editNote(noteText)};
         editButton.className = "NoteButton";
         div.appendChild(editButton);
-
+        
         let addChild = document.createElement("button")
-        let childDiv = document.createElement("childDiv");
-        addChild.innerHTML = "add Child";
         addChild.className = "NoteButton";
+        addChild.innerHTML = "add Child";
         div.appendChild(addChild);
         rxjs.fromEvent(addChild, 'click')
             .subscribe(() => addingChildFunction()
         );
         function addingChildFunction(){
+            let childDiv = document.createElement("p");
             console.log("adding child test");
-            //document.getElementById("div").appendChild("childDiv");
-            //childDiv.innerHTML("test");
+            childDiv.innerHTML="test";
+            div.appendChild(childDiv);
+            //document.getElementById("note").appendChild("childDiv");
+            
         }
 
         let deleteButton = document.createElement("button")
