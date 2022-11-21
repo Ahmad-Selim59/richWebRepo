@@ -39,6 +39,20 @@ function addNote() {
         editButton.className = "NoteButton";
         div.appendChild(editButton);
 
+        let addChild = document.createElement("button")
+        let childDiv = document.createElement("childDiv");
+        addChild.innerHTML = "add Child";
+        addChild.className = "NoteButton";
+        div.appendChild(addChild);
+        rxjs.fromEvent(addChild, 'click')
+            .subscribe(() => addingChildFunction()
+        );
+        function addingChildFunction(){
+            console.log("adding child test");
+            //document.getElementById("div").appendChild("childDiv");
+            //childDiv.innerHTML("test");
+        }
+
         let deleteButton = document.createElement("button")
         deleteButton.innerHTML = "Delete";
         rxjs.fromEvent(deleteButton, 'click')
