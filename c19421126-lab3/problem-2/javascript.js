@@ -29,6 +29,13 @@ function timer(){
     console.log(secondGoal);*/
     //this is the time which the timer will stop at
     let timerGoal = new Date(currentDate.getFullYear(), currentDate.getMonth(), currentDate.getDate(), hourGoal, minuteGoal, secondGoal);
-    console.log(timerGoal);
+    //console.log(timerGoal);
+
+    let currentTime = currentDate.getTime();
+    let timerGoalParsed = timerGoal.getTime();
+    console.log(currentTime);
+    console.log(timerGoalParsed);
+    let remaining = timerGoalParsed - currentTime;
+    console.log(remaining);
 
 }
