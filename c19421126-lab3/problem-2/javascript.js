@@ -26,11 +26,7 @@ const time = () => {
         currentValue = initialValue;
             clearInterval(interval);
         }
+
+        TimerDiv.innerHTML = currentValue;
     }, 1000);
 };
-
-    
-
-    
-
-
