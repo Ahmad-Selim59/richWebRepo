@@ -5,6 +5,8 @@ startButton.addEventListener('click', () => {
 
 let TimerDiv = document.getElementById("DisplayTimeCountdown");
 let totalTime = 0;
+let initialValue = 0;
+let currentValue = 0;
 
 let interval;
 const time = () => {
@@ -16,6 +18,15 @@ const time = () => {
     //find out how many seconds it is in total
     totalTime = parseInt(hours * 60 * 60) + parseInt(minutes * 60) + parseInt(seconds);
 
+    currentValue = totalTime;
+
+    interval = setInterval(() => {
+        currentValue -= 1;
+        if (currentValue <= 0) {
+        currentValue = initialValue;
+            clearInterval(interval);
+        }
+    }, 1000);
 };
 
     
