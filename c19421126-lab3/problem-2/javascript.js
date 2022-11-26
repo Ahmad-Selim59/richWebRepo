@@ -15,6 +15,6 @@ function timer(){
     let seconds = document.getElementById("seconds").value;
 
     //find out how many seconds it is in total
-    totalTime = (hours * 60 * 60) + (minutes * 60) + seconds;
+    totalTime = parseInt(hours * 60 * 60) + parseInt(minutes * 60) + parseInt(seconds);
 
 }
