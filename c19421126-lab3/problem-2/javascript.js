@@ -9,6 +9,9 @@ const {
   startButton.addEventListener('click', () => {
       time();
     });
+
+//interval for the timer
+  const timerSource = interval(1000);
   
   let TimerDiv = document.getElementById("DisplayTimeCountdown");
   let totalTime = 0;
