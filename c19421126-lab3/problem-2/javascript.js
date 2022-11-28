@@ -28,5 +28,14 @@ const {
       totalTime = parseInt(hours * 60 * 60) + parseInt(minutes * 60) + parseInt(seconds);
   
       currentValue = totalTime;
+
+
+      //converting time display into hours, minutes and seconds 
+      let hourRemaining = Math.floor(currentValue / 3600);
+      let minuteRemaining = Math.floor(currentValue % 3600 / 60);
+      let secondRemaining = Math.floor(currentValue % 3600 % 60);
+      displayTimer = hourRemaining + " : " + ("0" + minuteRemaining).slice(-2) + " : " + ("0" + secondRemaining).slice(-2) ;
+      
+      TimerDiv.innerHTML = displayTimer;
   
   };
