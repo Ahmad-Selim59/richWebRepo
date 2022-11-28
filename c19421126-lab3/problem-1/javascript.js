@@ -1,4 +1,8 @@
 let colors = ["Aqua", "Green", "Red", "Purple"];
+let addButton = document.getElementById("AddNote");
+rxjs.fromEvent(addButton, 'click')
+    .subscribe(() => addNote()
+);
 
 function addNote() {
 
@@ -18,7 +22,6 @@ function addNote() {
 
         let editButton = document.createElement("button")
         editButton.innerHTML = "Edit";
-        
         rxjs.fromEvent(editButton, 'click')
             .subscribe(() => editingFunction()
         );
