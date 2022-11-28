@@ -29,13 +29,18 @@ const {
   
       currentValue = totalTime;
 
+      let endTimer = timerInterval.pipe(takeWhile(() => currentValue != 0));
+      endTimer.subscribe(function () {
+        // minus total amount of seconds
+        currentValue--;
 
-      //converting time display into hours, minutes and seconds 
-      let hourRemaining = Math.floor(currentValue / 3600);
-      let minuteRemaining = Math.floor(currentValue % 3600 / 60);
-      let secondRemaining = Math.floor(currentValue % 3600 % 60);
-      displayTimer = hourRemaining + " : " + ("0" + minuteRemaining).slice(-2) + " : " + ("0" + secondRemaining).slice(-2) ;
-      
-      TimerDiv.innerHTML = displayTimer;
+        //converting time display into hours, minutes and seconds 
+        let hourRemaining = Math.floor(currentValue / 3600);
+        let minuteRemaining = Math.floor(currentValue % 3600 / 60);
+        let secondRemaining = Math.floor(currentValue % 3600 % 60);
+        displayTimer = hourRemaining + " : " + ("0" + minuteRemaining).slice(-2) + " : " + ("0" + secondRemaining).slice(-2) ;
+        
+        TimerDiv.innerHTML = displayTimer;
+    })
   
   };
