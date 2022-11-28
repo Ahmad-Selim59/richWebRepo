@@ -1,16 +1,9 @@
 let colors = ["Aqua", "Green", "Red", "Purple"];
 let addButton = document.getElementById("AddNote");
-/*
+
 rxjs.fromEvent(addButton, 'click')
     .subscribe(() => addNote()
 );
-*/
-
-/*
-const addButton = document.getElementById("AddNote");
-const addButtonClicked = Rx.Observable.fromEvent(addButton,"click");
-addButtonClicked.subscribe(() => addNote());
-*/
 
 function addNote() {
 
