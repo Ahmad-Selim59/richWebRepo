@@ -6,11 +6,13 @@ const {
   } = rxjs;
   
   let startButton = document.getElementById("startButton");
-  startButton.addEventListener('click', () => {
-      time();
-    });
-
-//interval for the timer
+  // startButton.addEventListener('click', () => {
+  //     time();
+  //   });
+  const startButtonClick = fromEvent(startButton,"click");
+  startButtonClick.subscribe(() => time());
+  
+  //interval for the timer
   const timerSource = interval(1000);
   
   let TimerDiv = document.getElementById("DisplayTimeCountdown");
