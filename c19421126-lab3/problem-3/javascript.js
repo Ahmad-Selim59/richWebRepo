@@ -46,7 +46,6 @@ function addNote() {
             deleteChild.className = "NoteButton";
             deleteChild.innerHTML = "Delete child";
             
-
             
             //console.log("adding child test");
             childDiv.innerHTML="Enter in subnote";
@@ -57,10 +56,34 @@ function addNote() {
             .subscribe(() => deletingFunction(childDiv)
             );
 
+
+            let add2Child = document.createElement("button")
+            add2Child.className = "NoteButton";
+            add2Child.innerHTML = "add child";
+            childDiv.appendChild(add2Child);
+            rxjs.fromEvent(add2Child, 'click')
+            .subscribe(() => creatingSecondChild()
+            );
             //document.getElementById("note").appendChild("childDiv");
-            
+        
+            function creatingSecondChild(){
+                let child2Div = document.createElement("div");
+                //console.log("adding child test");
+                child2Div.innerHTML="Enter in subnote";
+                child2Div.contentEditable = true;
+                childDiv.appendChild(child2Div);
+                let delete2Child = document.createElement("button")
+                delete2Child.className = "NoteButton";
+                delete2Child.innerHTML = "Delete child";
+                child2Div.appendChild(delete2Child);
+                rxjs.fromEvent(delete2Child, 'click')
+                .subscribe(() => deletingFunction(child2Div)
+                );
+            }
+    
         }
 
+       
         let deleteButton = document.createElement("button")
         deleteButton.innerHTML = "Delete";
         rxjs.fromEvent(deleteButton, 'click')
