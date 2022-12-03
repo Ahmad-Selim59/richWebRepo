@@ -4,3 +4,13 @@
     height: 75px;
     font-size: xx-large;
 }
+
+.inputTime > a{
+    font-size: x-large;
+}
+
+.inputTime > input{
+    margin-top: 50px;
+    width: 22%;
+    height: 40px;
+}
