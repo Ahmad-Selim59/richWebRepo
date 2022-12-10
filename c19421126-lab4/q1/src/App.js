@@ -27,6 +27,26 @@ const App = () => {
       note.id !== noteId)]);
   }
 
+  const EditNote = (noteId) =>{
+    console.log("edit is being called" + noteId)
+    // enter in new note
+    let newInput = prompt("enter in editted note");
+    // error checking
+    if(newInput === ""){
+      alert("note cant be blank");
+    }else{
+      // loop through each note, until find one thats clicked
+      setNote(notes => [...notes.map(note =>{
+        if(note.id === noteId){
+          // set message to input from prompt
+          note.noteText = newInput;
+        }
+        return note;
+      }) ]); 
+    }
+    
+  }
+
   //on change function
   function handleChange(event) {
     //console.log(event.target.value);
@@ -39,7 +59,7 @@ const App = () => {
       <input type={"button"} value={"Add Note"} onClick={addNote}></input>
 
       {notes.map( e =>
-          <Note text={e} delete = {DeleteNote}></Note>
+          <Note text={e} delete = {DeleteNote} edit = {EditNote}></Note>
         )}
       
     </div>
