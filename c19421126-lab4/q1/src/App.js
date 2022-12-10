@@ -20,9 +20,16 @@ const App = () => {
     console.log(notes)
   }
 
+  const DeleteNote = (noteId) => {
+    console.log("delete is being called" + noteId)
+    // loop through each note, returning every note, but the one clicked
+    setNote(note => [...note.filter(note => 
+      note.id !== noteId)]);
+  }
+
   //on change function
   function handleChange(event) {
-    console.log(event.target.value);
+    //console.log(event.target.value);
     setuserInput(event.target.value);
   }
 
@@ -32,7 +39,7 @@ const App = () => {
       <input type={"button"} value={"Add Note"} onClick={addNote}></input>
 
       {notes.map( e =>
-          <Note text={e}></Note>
+          <Note text={e} delete = {DeleteNote}></Note>
         )}
       
     </div>

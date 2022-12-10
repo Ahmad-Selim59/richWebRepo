@@ -6,7 +6,7 @@ const Note = (props) => {
         <div>
             <div>{props.text.noteText}</div>
             <input type={"button"} value={"Edit Note"}></input>
-            <input type={"button"} value={"Delete Note"}></input>
+            <input type={"button"} value={"Delete Note"} onClick= {() => {props.delete(props.text.id)}}></input>
         </div>
     )
 }
