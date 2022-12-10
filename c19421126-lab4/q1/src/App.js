@@ -30,6 +30,10 @@ const App = () => {
     <div>
       <input onChange={handleChange} type={"text"} placeholder={"Enter a Note Here"}></input>
       <input type={"button"} value={"Add Note"} onClick={addNote}></input>
+
+      {notes.map( e =>
+          <Note text={e}></Note>
+        )}
       
     </div>
   );
