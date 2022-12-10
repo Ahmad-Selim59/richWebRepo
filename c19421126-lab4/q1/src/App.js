@@ -51,6 +51,20 @@ const App = () => {
     
   }
 
+  const changeColor = (id,color) =>{
+    //console.log("colour function is being called")
+    // loop through each note, and set color to color being passed
+    setNote(notes => notes.map(note =>{
+      if(note.id === id){
+        //console.log("colour function is being called2")
+        note.color = color;
+      }
+      //console.log("colour function is being called3")
+      return note;
+    }) ); 
+  }
+  
+
   //on change function
   function handleChange(event) {
     //console.log(event.target.value);
@@ -63,7 +77,7 @@ const App = () => {
       <input type={"button"} value={"Add Note"} onClick={addNote}></input>
 
       {notes.map( e =>
-          <Note text={e} delete = {DeleteNote} edit = {EditNote}></Note>
+          <Note text={e} delete = {DeleteNote} edit = {EditNote} changeColor = {changeColor}></Note>
         )}
       
     </div>
